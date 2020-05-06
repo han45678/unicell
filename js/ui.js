@@ -1,5 +1,8 @@
 window.onload = function () {
-
+    $("#loading").fadeOut(1000);
+    //$("#loading_back").fadeOut(1100);
+    $("#loading_back").animate({height:"0"});
+    $("body").removeClass("active")
 };
 $(document).ready(function () {
     $("header nav ul li").click(function () {
@@ -12,10 +15,10 @@ $(document).ready(function () {
         $('body').toggleClass("active");
     });
     $("#goCompany,#goLaboratory,#goBrand,#goFooter").click(function () {
-        $('#menu_button').toggleClass("active");
-        $('header nav').toggleClass("active");
-        $('header #language').toggleClass("active");
-        $('body').toggleClass("active");
+        $('#menu_button').removeClass("active");
+        $('header nav').removeClass("active");
+        $('header #language').removeClass("active");
+        $('body').removeClass("active");
     });
 
     $("#information .list .item").click(function () {
@@ -23,8 +26,9 @@ $(document).ready(function () {
     })
 
     $("#information .open").click(function () {
-        $("#information .list").toggleClass("active");
-        $("#information .open").toggleClass("active");
+        $("#information .list .hide").slideToggle();
+        $("#information .list .hide").toggleClass("fadeInBottom");
+        $(this).toggleClass("active");
     })
 
     $("#media .list .item").click(function () {
@@ -32,8 +36,9 @@ $(document).ready(function () {
     })
 
     $("#media .open").click(function () {
-        $("#media .list").toggleClass("active");
-        $("#media .open").toggleClass("active");
+        $("#media .list .hide").slideToggle();
+        $("#media .list .hide").toggleClass("fadeInBottom");
+        $(this).toggleClass("active");
     })
     
 
@@ -104,7 +109,7 @@ $(document).ready(function () {
     var wow = new WOW({
         boxClass: 'wow', // 要套用WOW.js縮需要的動畫class(預設是wow)
         animateClass: 'animated', // 要"動起來"的動畫(預設是animated, 因此如果你有其他動畫library要使用也可以在這裡調整)
-        offset: 50, // 距離顯示多遠開始顯示動畫 (預設是0, 因此捲動到顯示時才出現動畫)
+        offset: 250, // 距離顯示多遠開始顯示動畫 (預設是0, 因此捲動到顯示時才出現動畫)
         mobile: true, // 手機上是否要套用動畫 (預設是true)
         live: true, // 非同步產生的內容是否也要套用 (預設是true, 非常適合搭配SPA)
         callback: function (box) {

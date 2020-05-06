@@ -1,6 +1,31 @@
 @import url('./reset.css');
 @import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css");
 
+#loading {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #fff;
+    z-index: 999;
+
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #fff;
+    }
+}
+
+#loading_back {
+    height: 100vh;
+}
+
 .wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -150,9 +175,9 @@ header {
                             position: absolute;
                             left: 51%;
                             right: 51%;
-                            bottom: 0;
+                            bottom: 20px;
                             background: #2098D1;
-                            height: 4px;
+                            height: 1px;
                             transition-property: left, right;
                             transition-duration: 0.3s;
                             transition-timing-function: ease-out;
@@ -290,9 +315,15 @@ main {
                 .icon {
                     width: 1px;
                     height: 34px;
-                    background-color: #000;
                     display: block;
                     margin: 10px auto auto auto;
+
+                    .line-animation {
+                        width: 1px;
+                        height: 34px;
+                        display: block;
+                        background-color: #000;
+                    }
                 }
             }
         }
@@ -376,7 +407,7 @@ main {
                 z-index: -1;
 
                 img {
-                    width: 100%;
+                    width: 125%;
                     object-fit: cover;
                 }
             }
@@ -700,20 +731,15 @@ main {
             }
 
             .list {
-                &.active {
-                    .item {
-                        display: block;
-                    }
+                .show {
+                    display: block;
+                }
+
+                .hide{
+                    display:none;
                 }
 
                 .item {
-                    display: none;
-
-                    &:nth-child(1),
-                    &:nth-child(2),
-                    &:nth-child(3) {
-                        display: block;
-                    }
 
                     .head {
                         font-size: 17px;
@@ -765,9 +791,8 @@ main {
                     }
 
                     .content {
-                        display: none;
-                        padding: 40px 0;
-
+                        height: 0;
+                        overflow: hidden;
                         .row {
                             display: flex;
 
@@ -797,7 +822,8 @@ main {
                         }
 
                         .content {
-                            display: block;
+                            height: auto;
+                            padding: 40px 0;
                         }
                     }
                 }
@@ -1424,7 +1450,7 @@ footer {
                         }
 
                         .content {
-                            padding: 40px 0;
+                            padding:0;
 
                             .row {
                                 display: flex;
@@ -1442,6 +1468,11 @@ footer {
                                         line-height: 22px;
                                     }
                                 }
+                            }
+                        }
+                        .active{
+                            .content {
+                                padding: 40px 0;
                             }
                         }
                     }
@@ -1608,6 +1639,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+    
     .wrapper {
         padding-left: 15px;
         padding-right: 15px;
@@ -1615,7 +1647,7 @@ footer {
 
     header {
         height: 64px;
-        overflow: hidden;
+        overflow: visible;
 
         .wrapper {
             display: block;
@@ -1955,6 +1987,8 @@ footer {
                             line-height: 30px;
                             font-size: 12px;
                             margin-top: 20px;
+                            margin-left: auto;
+                            margin-right: auto;
 
                             &::before {
                                 width: 130px;
@@ -2211,7 +2245,7 @@ footer {
                         }
 
                         .content {
-                            padding: 20px 0;
+                            padding:0;
 
                             .row {
                                 flex-wrap: wrap;
@@ -2230,6 +2264,11 @@ footer {
                                         line-height: 22px;
                                     }
                                 }
+                            }
+                        }
+                        .active{
+                            .content {
+                                padding: 20px 0;
                             }
                         }
                     }
@@ -2309,6 +2348,7 @@ footer {
                         }
                     }
                 }
+
                 .row_list {
 
                     .item {
@@ -2321,7 +2361,7 @@ footer {
                         }
 
                         .text {
-                            width:100%;
+                            width: 100%;
                             padding-left: 0;
                             font-size: 11px;
                         }
@@ -2405,6 +2445,49 @@ footer {
             font-size: 8px;
             line-height: 53px;
             letter-spacing: 1px;
+        }
+    }
+}
+
+@media (max-width: 321px) {
+    header {
+        .wrapper {
+
+            nav {
+
+                ul {
+                    li {
+
+                        a,
+                        span {
+                            line-height: 50px;
+                        }
+
+                        &.submenu {
+
+                            &::after {
+                                top: 24px;
+                            }
+
+                            &::before {
+                                top: 18px;
+                            }
+
+                            ol {
+                                li {
+
+                                    span,
+                                    a {
+                                        line-height: 50px;
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+            }
         }
     }
 }

@@ -1,6 +1,31 @@
 @charset "UTF-8";
 @import url("./reset.css");
 @import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css");
+#loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+  z-index: 999;
+}
+
+#loading img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fff;
+}
+
+#loading_back {
+  height: 100vh;
+}
+
 .wrapper {
   margin-left: auto;
   margin-right: auto;
@@ -146,9 +171,9 @@ header .wrapper nav ul li.pagination::after {
   position: absolute;
   left: 51%;
   right: 51%;
-  bottom: 0;
+  bottom: 20px;
   background: #2098D1;
-  height: 4px;
+  height: 1px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
   -webkit-transition-duration: 0.3s;
@@ -285,9 +310,15 @@ main#home #banner #scroll {
 main#home #banner #scroll .icon {
   width: 1px;
   height: 34px;
-  background-color: #000;
   display: block;
   margin: 10px auto auto auto;
+}
+
+main#home #banner #scroll .icon .line-animation {
+  width: 1px;
+  height: 34px;
+  display: block;
+  background-color: #000;
 }
 
 main#home #mission {
@@ -373,7 +404,7 @@ main#home #about .background {
 }
 
 main#home #about .background img {
-  width: 100%;
+  width: 125%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -685,21 +716,14 @@ main#news #media h3 .number {
   font-style: oblique;
 }
 
-main#news #information .list.active .item,
-main#news #media .list.active .item {
+main#news #information .list .show,
+main#news #media .list .show {
   display: block;
 }
 
-main#news #information .list .item,
-main#news #media .list .item {
+main#news #information .list .hide,
+main#news #media .list .hide {
   display: none;
-}
-
-main#news #information .list .item:nth-child(1), main#news #information .list .item:nth-child(2), main#news #information .list .item:nth-child(3),
-main#news #media .list .item:nth-child(1),
-main#news #media .list .item:nth-child(2),
-main#news #media .list .item:nth-child(3) {
-  display: block;
 }
 
 main#news #information .list .item .head,
@@ -761,8 +785,8 @@ main#news #media .list .item .head .button .icon2 {
 
 main#news #information .list .item .content,
 main#news #media .list .item .content {
-  display: none;
-  padding: 40px 0;
+  height: 0;
+  overflow: hidden;
 }
 
 main#news #information .list .item .content .row,
@@ -796,7 +820,8 @@ main#news #media .list .item.active .head .button .icon2 {
 
 main#news #information .list .item.active .content,
 main#news #media .list .item.active .content {
-  display: block;
+  height: auto;
+  padding: 40px 0;
 }
 
 main#news #information .open,
@@ -1337,7 +1362,7 @@ footer #rights {
   }
   main#news #information .list .item .content,
   main#news #media .list .item .content {
-    padding: 40px 0;
+    padding: 0;
   }
   main#news #information .list .item .content .row,
   main#news #media .list .item .content .row {
@@ -1358,6 +1383,10 @@ footer #rights {
     padding: 0 15px;
     font-size: 12px;
     line-height: 22px;
+  }
+  main#news #information .list .item .active .content,
+  main#news #media .list .item .active .content {
+    padding: 40px 0;
   }
   main#news #information .open,
   main#news #media .open {
@@ -1493,7 +1522,7 @@ footer #rights {
   }
   header {
     height: 64px;
-    overflow: hidden;
+    overflow: visible;
   }
   header .wrapper {
     display: block;
@@ -1777,6 +1806,8 @@ footer #rights {
     line-height: 30px;
     font-size: 12px;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   main#home #mission .wrapper .content .item::before {
     width: 130px;
@@ -1982,7 +2013,7 @@ footer #rights {
   }
   main#news #information .list .item .content,
   main#news #media .list .item .content {
-    padding: 20px 0;
+    padding: 0;
   }
   main#news #information .list .item .content .row,
   main#news #media .list .item .content .row {
@@ -2003,6 +2034,10 @@ footer #rights {
     padding: 25px 0 0 0;
     font-size: 12px;
     line-height: 22px;
+  }
+  main#news #information .list .item .active .content,
+  main#news #media .list .item .active .content {
+    padding: 20px 0;
   }
   main#news #information .open,
   main#news #media .open {
@@ -2142,6 +2177,23 @@ footer #rights {
     font-size: 8px;
     line-height: 53px;
     letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 321px) {
+  header .wrapper nav ul li a,
+  header .wrapper nav ul li span {
+    line-height: 50px;
+  }
+  header .wrapper nav ul li.submenu::after {
+    top: 24px;
+  }
+  header .wrapper nav ul li.submenu::before {
+    top: 18px;
+  }
+  header .wrapper nav ul li.submenu ol li span,
+  header .wrapper nav ul li.submenu ol li a {
+    line-height: 50px;
   }
 }
 /*# sourceMappingURL=style.css.map */

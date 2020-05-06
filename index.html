@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <title>生源泰生物科技股份有限公司</title>
     <link rel="stylesheet" href="./css/slick.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -12,7 +13,12 @@
     <script src="./js/wow.min.js"></script>
 </head>
 
-<body>
+<body class="active">
+    <div id="loading">
+        <img src="./image/logo.png" alt="生源泰生物科技股份有限公司">
+    </div>
+    <div id="loading_back">
+    </div>
     <header id="header">
         <div class="wrapper">
             <a id="logo" href="./index.html">
@@ -56,7 +62,7 @@
     </header>
     <main id="home">
         <div id="banner">
-            <div class="text">
+            <div class="text fadeInRight delay_1000">
                 <div class="content">
                     <h4>醫療產業供應商</h4>
                     <h2>領航再生醫學</h2>
@@ -68,7 +74,9 @@
             </div>
             <div id="scroll">
                 SCROLL TO VIEW
-                <span class="icon"></span>
+                <span class="icon">
+                    <span class="line-animation"></span>
+                </span>
             </div>
         </div>
         <div id="mission">
@@ -81,11 +89,11 @@
                             <span>公司介紹</span>
                             <span><img src="./image/downArrow.png" alt="生源泰生物科技股份有限公司"></span>
                         </div>
-                        <div class="item fadeInUp wow delay_1s">
+                        <div class="item fadeInUp wow delay_025s">
                             <span>合作實驗室</span>
                             <span><img src="./image/downArrow.png" alt="生源泰生物科技股份有限公司"></span>
                         </div>
-                        <div class="item fadeInUp wow delay_1s_half">
+                        <div class="item fadeInUp wow delay_05s">
                             <span>品牌理念</span>
                             <span><img src="./image/downArrow.png" alt="生源泰生物科技股份有限公司"></span>
                         </div>
@@ -116,11 +124,11 @@
                             </div>
                             <div class="item">
                                 <h4>醫美保養</h4>
-                                <img src="./image/a1.png" alt="生源泰生物科技股份有限公司">
+                                <img src="./image/a2.png" alt="生源泰生物科技股份有限公司">
                             </div>
                             <div class="item">
-                                <h4>健康長照</h4>
-                                <img src="./image/a1.png" alt="生源泰生物科技股份有限公司">
+                                <h4>青春活力</h4>
+                                <img src="./image/a3.png" alt="生源泰生物科技股份有限公司">
                             </div>
                         </div>
                     </div>
@@ -140,9 +148,9 @@
                 <div class="title">
                     <h3 class="fadeInUp wow">合作實驗室</h3>
                 </div>
-                <h4 class="fadeInUp wow">cGMP 實驗室</h4>
+                <h4 class="fadeInBottom wow">cGMP 實驗室</h4>
                 <div class="content">
-                    <div class="text fadeIn wow">
+                    <div class="text fadeInBottom wow">
                         <p>一萬平方英呎符合當代優良生產標準得設施ISO 7 等級的清潔室，搭載等級5的生物安全操作台。</p>
                         <h5>主要設施</h5>
                         <p>血液培養系統、獨立冷凍儲藏間、液態氮儲存槽、常見基本實驗室設備/耗材</p>
@@ -203,11 +211,11 @@
                         <span class="photo"><img src="./image/b1.png" alt="生源泰生物科技股份有限公司"></span>
                         <span class="text">永續再生</span>
                     </h4>
-                    <h4 class="fadeInUp wow delay_1s">
+                    <h4 class="fadeInUp wow delay_025s">
                         <span class="photo"><img src="./image/b2.png" alt="生源泰生物科技股份有限公司"></span>
                         <span class="text">領導未來</span>
                     </h4>
-                    <h4 class="fadeInUp wow delay_1s_half">
+                    <h4 class="fadeInUp wow delay_05s">
                         <span class="photo"><img src="./image/b3.png" alt="生源泰生物科技股份有限公司"></span>
                         <span class="text">多元創新</span>
                     </h4>
@@ -231,28 +239,39 @@
             <div class="row">
                 <div id="headOffice">
                     <h3 class="fadeInUp wow">台南總公司</h3>
-                    <p class="fadeInUp wow delay_1s"><img src="./image/map-icon.png" alt="生源泰生物科技股份有限公司">台南市北區康樂街396號2樓</p>
-                    <p class="fadeInUp wow delay_1s_half"><img src="./image/tel-icon.png" alt="生源泰生物科技股份有限公司">電話：06-222-6009</p>
+                    <p class="fadeInUp wow delay_025s" data-wow-offset="50">
+                        <img src="./image/map-icon.png" alt="生源泰生物科技股份有限公司">台南市北區康樂街396號2樓
+                    </p>
+                    <p class="fadeInUp wow delay_05s" data-wow-offset="50">
+                        <img src="./image/tel-icon.png" alt="生源泰生物科技股份有限公司">電話：06-222-6009
+                    </p>
                 </div>
                 <div id="office">
                     <h3 class="fadeInUp wow">台北辦事處</h3>
-                    <p class="fadeInUp wow delay_1s"><img src="./image/map-icon.png" alt="生源泰生物科技股份有限公司">地址:台北市大同區延平北路二段202號 17樓-2</p>
-                    <p class="fadeInUp wow delay_1s_half"><img src="./image/tel-icon.png" alt="生源泰生物科技股份有限公司">電話:02-2557-3519</p>
-                    <p class="fadeInUp wow delay_2s"><img src="./image/fax-icon.png" alt="生源泰生物科技股份有限公司">傳真：02-2557-3509</p>
-                    <p class="fadeInUp wow delay_2s_half"><img src="./image/mail-icon.png" alt="生源泰生物科技股份有限公司">信箱:inquiry@unicell-bio.com</p>
+                    <p class="fadeInUp wow delay_025s" data-wow-offset="50">
+                        <img src="./image/map-icon.png" alt="生源泰生物科技股份有限公司">地址:台北市大同區延平北路二段202號 17樓-2
+                    </p>
+                    <p class="fadeInUp wow delay_05s" data-wow-offset="50">
+                        <img src="./image/tel-icon.png" alt="生源泰生物科技股份有限公司">電話:02-2557-3519
+                    </p>
+                    <p class="fadeInUp wow delay_075s" data-wow-offset="50">
+                        <img src="./image/fax-icon.png" alt="生源泰生物科技股份有限公司">傳真：02-2557-3509
+                    </p>
+                    <p class="fadeInUp wow delay_1000" data-wow-offset="50">
+                        <img src="./image/mail-icon.png" alt="生源泰生物科技股份有限公司">信箱:inquiry@unicell-bio.com</p>
                 </div>
                 <div id="link">
-                    <a class="fadeInUp wow" href="">
+                    <a class="fadeInUp100 wow" data-wow-offset="50" href="">
                         <img src="./image/fb-icon.png" alt="生源泰生物科技股份有限公司">
                     </a>
-                    <a class="fadeInUp wow delay_1s" href="">
+                    <a class="fadeInUp100 wow delay_025s" data-wow-offset="50" href="">
                         <img src="./image/yt-icon.png" alt="生源泰生物科技股份有限公司">
                     </a>
                 </div>
             </div>
         </div>
         <div id="rights">
-            <span class="zoom">Unicell Biotechnology Co., Ltd. © 2020 . All Rights Reserved</span>
+            <span class="zoom wow" data-wow-offset="20">Unicell Biotechnology Co., Ltd. © 2020 . All Rights Reserved</span>
         </div>
     </footer>
     <script src="./js/ui.js"></script>

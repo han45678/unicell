@@ -460,12 +460,14 @@ table {
 }
 
 /*# sourceMappingURL=reset.css.map */
-.text-right{
+.text-right {
   text-align: right;
 }
-.text-left{
+
+.text-left {
   text-align: left;
 }
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -483,6 +485,26 @@ table {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.line-animation {
+  animation-name: line-animation;
+  animation-duration: 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes line-animation {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 34px;
+  }
 }
 
 .fadeIn {
@@ -504,7 +526,7 @@ table {
 
 .fadeInUp {
   animation-name: fadeInUp;
-  animation-duration: 1.5s;
+  animation-duration: 0.6s;
   opacity: 0;
   animation-fill-mode: forwards;
 }
@@ -512,7 +534,45 @@ table {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 30%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp100 {
+  animation-name: fadeInUp100;
+  animation-duration: 0.6s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInUp100 {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInBottom {
+  animation-name: fadeInBottom;
+  animation-duration: 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -30%, 0);
   }
 
   100% {
@@ -531,7 +591,7 @@ table {
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    transform: translate3d(-10%, 0, 0);
+    transform: translate3d(-30%, 0, 0);
   }
 
   100% {
@@ -550,44 +610,18 @@ table {
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    transform: translate3d(10%, 0, 0);
+    transform: translate3d(30%, 0, 0);
   }
 
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-  }
-}
-
-.magnet {
-  animation-name: magnet;
-  animation-duration: 3s;
-  opacity: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes magnet {
-  0% {
-    transform: translate3d(-10%, -10%, 0);
-    opacity: 0.6;
-    margin: 0;
-  }
-
-  50% {
-    transform: translate3d(0, -10%, 0);
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-    margin: 0;
   }
 }
 
 .zoom {
   animation-name: zoom;
-  animation-duration: 2s;
+  animation-duration: 1s;
   opacity: 0;
   animation-fill-mode: forwards;
   animation-delay: 1s;
@@ -606,22 +640,34 @@ table {
   }
 }
 
-.delay_3s {
+.delay_3000 {
   animation-delay: 3s;
 }
 
-.delay_2s_half {
+.delay_2000_half {
   animation-delay: 2.5s;
 }
 
-.delay_2s {
+.delay_2000 {
   animation-delay: 2s;
 }
 
-.delay_1s_half {
+.delay_1500 {
   animation-delay: 1.5s;
 }
 
-.delay_1s {
+.delay_1000 {
   animation-delay: 1s;
+}
+
+.delay_075s {
+  animation-delay: 0.75s;
+}
+
+.delay_05s {
+  animation-delay: 0.5s;
+}
+
+.delay_025s {
+  animation-delay: 0.25s;
 }
