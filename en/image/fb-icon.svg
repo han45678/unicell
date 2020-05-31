@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="生源泰-電腦用" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1首頁" transform="translate(-1002.000000, -4407.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="頁尾" transform="translate(0.000000, 4108.000000)">
+                <g id="facebook" transform="translate(1002.000000, 299.000000)">
+                    <path d="M15,0 C6.71625,0 0,6.71625 0,15 C0,23.28375 6.71625,30 15,30 C23.28375,30 30,23.28375 30,15 C30,6.71625 23.28375,0 15,0 Z M18.75,10 L17.0625,10 C16.39,10 16.25,10.27625 16.25,10.9725 L16.25,12.5 L18.75,12.5 L18.48875,15 L16.25,15 L16.25,23.75 L12.5,23.75 L12.5,15 L10,15 L10,12.5 L12.5,12.5 L12.5,9.615 C12.5,7.40375 13.66375,6.25 16.28625,6.25 L18.75,6.25 L18.75,10 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
