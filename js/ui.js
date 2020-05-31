@@ -1,7 +1,7 @@
 window.onload = function () {
-    $("#loading").fadeOut(1000);
+    $("#loading").hide();
     //$("#loading_back").fadeOut(1100);
-    $("#loading_back").animate({height:"0"});
+    //$("#loading_back").animate({height:"0"});
     $("body").removeClass("active")
 };
 $(document).ready(function () {
@@ -40,7 +40,14 @@ $(document).ready(function () {
         $("#media .list .hide").toggleClass("fadeInBottom");
         $(this).toggleClass("active");
     })
-    
+
+    $('#banner .slick').slick({
+        arrows: false,
+        autoplay: true,
+        fade: true,
+        speed: 1500,
+        dots: false,
+    });
 
     $('#company .slick').slick({
         arrows: false,
@@ -66,8 +73,7 @@ $(document).ready(function () {
     if (screen.width <= 768) {
         slideTo = 63
         scroll = 63
-    }
-    else {
+    } else {
         slideTo = 135
         scroll = 90
     }
@@ -84,17 +90,17 @@ $(document).ready(function () {
         }, 800);
     });
 
-    $('#goCompany').click(function () {
+    $('#goCompany,#Mcompany').click(function () {
         $('html,body').animate({
             scrollTop: $('#company').offset().top - slideTo
         }, 800);
     });
-    $('#goLaboratory').click(function () {
+    $('#goLaboratory,#Mlaboratory').click(function () {
         $('html,body').animate({
             scrollTop: $('#laboratory').offset().top - slideTo
         }, 800);
     });
-    $('#goBrand').click(function () {
+    $('#goBrand,#Mbrand').click(function () {
         $('html,body').animate({
             scrollTop: $('#brand').offset().top - slideTo
         }, 800);
@@ -119,4 +125,18 @@ $(document).ready(function () {
     });
     wow.init();
 
+    $(".imgLiquidLT").imgLiquid({
+        fill: true,
+        horizontalAlign: "left",
+        verticalAlign: "top"
+    });
+    $(".imgLiquidCC").imgLiquid({
+        fill: true,
+        horizontalAlign: "center",
+        verticalAlign: "center"
+    });
+
+    $("#link a").click(function () {
+        alert('建置中');
+    });
 });

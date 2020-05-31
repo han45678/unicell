@@ -52,7 +52,8 @@
           justify-content: space-evenly;
 }
 
-.header-height, main#home #banner, main#home #banner .text, main#home #banner .text::before, main#home #banner .photo img {
+.header-height, main#home #banner, main#home #banner .text,
+main#home #banner .text_back, main#home #banner::before, main#home #banner .photo .imgLiquidLT {
   height: calc(100vh - 90px);
 }
 
@@ -71,6 +72,7 @@ header {
 }
 
 header .wrapper {
+  max-width: 1680px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,9 +126,7 @@ header .wrapper nav ul li.submenu:hover, header .wrapper nav ul li.submenu.activ
 
 header .wrapper nav ul li.submenu ol {
   position: absolute;
-  bottom: -90px;
   z-index: 5;
-  padding-top: 85px;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
   -webkit-transition: 0.6s;
@@ -223,26 +223,29 @@ main {
 
 main#home #banner {
   position: relative;
-  background: linear-gradient(210deg, #3becc7 25%, rgba(26, 160, 248, 0.8) 75%);
+  background-image: url(../image/banner_back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-main#home #banner .text {
+main#home #banner .text,
+main#home #banner .text_back {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
-  margin-right: 50%;
-  background-color: rgba(2, 152, 197, 0.4);
-  z-index: 2;
+  width: 45%;
+  margin-right: 55%;
+  mix-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
 }
 
-main#home #banner .text::before {
-  content: '';
-  display: block;
-  width: 95%;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: relative;
-  z-index: 3;
+main#home #banner .text {
+  background-color: unset;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 main#home #banner .text .content {
@@ -272,6 +275,7 @@ main#home #banner .text .content h2 {
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 30px;
+  letter-spacing: 2px;
 }
 
 main#home #banner .text .content h3 {
@@ -281,18 +285,30 @@ main#home #banner .text .content h3 {
   letter-spacing: 7.5px;
 }
 
+main#home #banner::before {
+  position: absolute;
+  left: 40%;
+  top: 0;
+  content: '';
+  display: block;
+  width: 10%;
+  background-image: url(../image/Filter2.png);
+  z-index: 2;
+}
+
 main#home #banner .photo {
   position: absolute;
   top: 0;
   right: 0;
   width: 60%;
   margin-left: 40%;
+  background-color: #fff;
 }
 
-main#home #banner .photo img {
+main#home #banner .photo .imgLiquidLT {
+  -webkit-transition: none;
+  transition: none;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 main#home #banner #scroll {
@@ -404,7 +420,11 @@ main#home #about .background {
 }
 
 main#home #about .background img {
-  width: 125%;
+  width: 100%;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -468,6 +488,7 @@ main#home #company .wrapper .content .photo .slick .item h4 {
   width: 125px;
   text-align: center;
   position: relative;
+  letter-spacing: 3px;
 }
 
 main#home #company .wrapper .content .photo .slick .item h4::after {
@@ -481,8 +502,9 @@ main#home #company .wrapper .content .photo .slick .item h4::after {
   z-index: -1;
 }
 
-main#home #company .wrapper .content .photo .slick .item img {
+main#home #company .wrapper .content .photo .slick .item .company-photo {
   width: 100%;
+  height: 357px;
 }
 
 main#home #company .wrapper .content .photo .slick .slick-dots {
@@ -523,6 +545,7 @@ main#home #company .wrapper .content .text p img {
   margin-right: 40px;
   display: inline-block;
   float: left;
+  max-width: 92px;
 }
 
 main#home #laboratory {
@@ -578,7 +601,7 @@ main#home #laboratory .wrapper .content .photo {
 }
 
 main#home #laboratory .wrapper .content .photo .big {
-  width: 800px;
+  width: calc(100% - 228px - 45px);
   margin-right: 45px;
   position: relative;
 }
@@ -610,14 +633,14 @@ main#home #laboratory .wrapper .content .photo .big .arrow .next {
 }
 
 main#home #laboratory .wrapper .content .photo .small {
-  width: calc(100% - 800px - 45px);
+  width: 228px;
 }
 
 main#home #laboratory .wrapper .content .photo .small .item h6 {
   font-size: 18px;
   font-weight: 400;
   color: #0E77AF;
-  line-height: 39px;
+  line-height: 45px;
 }
 
 main#home #laboratory .wrapper .content .photo .small .item h6 img {
@@ -626,7 +649,13 @@ main#home #laboratory .wrapper .content .photo .small .item h6 img {
   margin-top: -4px;
 }
 
-main#home #laboratory .wrapper .content .photo .small .item img {
+main#home #laboratory .wrapper .content .photo .small .item .photo {
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+}
+
+main#home #laboratory .wrapper .content .photo .small .item .photo img {
   width: 100%;
 }
 
@@ -647,9 +676,9 @@ main#home #brand .wrapper h3 {
 
 main#home #brand .wrapper .content {
   height: 234px;
-  background-image: url(../image/brand.png);
+  background-image: url(../image/brand.png?20200518);
   background-size: cover;
-  background-color: #216AB0;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -695,7 +724,7 @@ main#news #banner .content, main#product #banner .content {
 
 main#news #banner .content h2, main#product #banner .content h2 {
   margin-left: 65px;
-  margin-top: 10px;
+  margin-top: 60px;
   font-size: 32px;
   font-weight: bold;
   color: #fff;
@@ -843,6 +872,11 @@ main#news #media .open::before {
   content: '更多消息';
 }
 
+main#news #information .open.media::before,
+main#news #media .open.media::before {
+  content: '更多報導';
+}
+
 main#news #information .open:hover,
 main#news #media .open:hover {
   background-color: rgba(38, 136, 255, 0.4);
@@ -885,7 +919,7 @@ main#product .article .title h3::after {
   display: block;
   width: 100%;
   height: 5px;
-  background: linear-gradient(135deg, #000000 20%, #189BFB 80%);
+  background-image: url(../image/lc.png);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -929,7 +963,7 @@ main#product .article .row .item h4.text-left::after {
   display: block;
   width: 23px;
   height: 8px;
-  background: linear-gradient(135deg, #000000 20%, #189BFB 80%);
+  background-image: url(../image/lc3.png);
   position: absolute;
   bottom: calc(50% - 4px + 10px);
   left: 15px;
@@ -952,7 +986,7 @@ main#product .article .row .item .text::after {
   display: block;
   width: 35px;
   height: 8px;
-  background: linear-gradient(135deg, #000000 20%, #189BFB 80%);
+  background-image: url(../image/lc2.png);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -984,7 +1018,7 @@ main#product .article .row_list .item h4 {
   font-size: 18px;
   color: #fff;
   text-align: center;
-  background: linear-gradient(135deg, #000000 5%, #189BFB 80%);
+  background-image: url(../image/buttonC.png);
   border-radius: 5px;
   border-bottom-left-radius: 0;
 }
@@ -1014,6 +1048,21 @@ footer #goTop {
   cursor: pointer;
 }
 
+footer #goTop:hover #arrow {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+footer #goTop #arrow {
+  margin-bottom: 7px;
+}
+
+footer #goTop img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 footer .title {
   position: absolute;
   left: 50%;
@@ -1034,11 +1083,13 @@ footer .title .unit {
   width: 145px;
   background-color: #6C6C6C;
   font-size: 22px;
+  letter-spacing: 4px;
 }
 
 footer .title .name {
   width: calc(100% - 145px);
   font-size: 22px;
+  letter-spacing: 4px;
 }
 
 footer .wrapper {
@@ -1060,6 +1111,10 @@ footer .wrapper p {
 
 footer .wrapper p img {
   margin-right: 15px;
+}
+
+footer .wrapper p a {
+  color: #fff;
 }
 
 footer .wrapper .row {
@@ -1144,7 +1199,8 @@ footer #rights {
   header .wrapper #language .icon_line {
     margin-top: 20.5px;
   }
-  .header-height, main#home #banner, main#home #banner .text, main#home #banner .text::before, main#home #banner .photo img {
+  .header-height, main#home #banner, main#home #banner .text,
+  main#home #banner .text_back, main#home #banner::before, main#home #banner .photo .imgLiquidLT {
     height: calc((100vh - 56px) / 2);
   }
   main {
@@ -1153,6 +1209,13 @@ footer #rights {
   main#home #banner {
     position: relative;
     background: linear-gradient(210deg, #3becc7 25%, rgba(26, 160, 248, 0.8) 75%);
+  }
+  main#home #banner .text {
+    background-color: unset;
+    mix-blend-mode: normal;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   main#home #banner .text .content {
     margin-left: 10%;
@@ -1167,6 +1230,9 @@ footer #rights {
   main#home #banner .text .content h3 {
     font-size: 12px;
     line-height: 18px;
+  }
+  main#home #banner::before {
+    display: none;
   }
   main#home #mission {
     height: calc((100vh - 56px) / 2 - 200px);
@@ -1227,6 +1293,9 @@ footer #rights {
   main#home #company .wrapper .content .photo {
     width: 244px;
   }
+  main#home #company .wrapper .content .photo .slick .item .company-photo {
+    height: 257px;
+  }
   main#home #company .wrapper .content .text {
     width: calc(100% - 244px - 25px);
     padding-left: 25px;
@@ -1250,8 +1319,8 @@ footer #rights {
   main#home #laboratory .wrapper h4 {
     padding-top: 35px;
     font-size: 16px;
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   main#home #laboratory .wrapper .content {
     padding-left: 45px;
@@ -1728,24 +1797,17 @@ footer #rights {
   main#home #banner {
     height: calc(100vh - 64px);
     position: relative;
-    background: linear-gradient(210deg, #3becc7 25%, rgba(26, 160, 248, 0.8) 75%);
   }
-  main#home #banner .text {
-    height: calc((100vh - 64px) / 5 * 2);
-    position: static;
+  main#home #banner .text,
+  main#home #banner .text_back {
+    height: 40vh;
+    position: relative;
     width: 100%;
     margin-right: 0;
   }
-  main#home #banner .text::before {
-    width: 100%;
-    height: calc((100vh - 64px) / 5 * 2 + 30px);
-  }
-  main#home #banner .text::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: calc((100vh - 64px) / 5 * 2 + 60px);
-    background-color: rgba(2, 152, 197, 0.4);
+  main#home #banner .text {
+    background-color: unset;
+    mix-blend-mode: normal;
     position: absolute;
     top: 0;
     left: 0;
@@ -1764,19 +1826,31 @@ footer #rights {
     font-size: 46px;
     margin-top: 20px;
     margin-bottom: 20px;
+    letter-spacing: 2px;
   }
   main#home #banner .text .content h3 {
     font-size: 12px;
     line-height: 18px;
   }
   main#home #banner .photo {
-    height: calc((100vh - 64px) / 5 * 3);
-    position: static;
-    width: calc(100% - 50px);
-    margin-left: 50px;
+    height: 55vh;
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    right: 0;
+    width: 100%;
   }
-  main#home #banner .photo img {
-    height: 100%;
+  main#home #banner .photo .imgLiquidLT {
+    height: 55vh;
+  }
+  main#home #banner::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    display: block;
+    height: 45vh;
+    width: 100%;
   }
   main#home #banner #scroll {
     display: none;
@@ -1802,15 +1876,17 @@ footer #rights {
     letter-spacing: 2px;
   }
   main#home #mission .wrapper .content .item {
-    width: 100px;
+    width: 110px;
     line-height: 30px;
     font-size: 12px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   main#home #mission .wrapper .content .item::before {
-    width: 130px;
+    width: 180px;
     height: 40px;
     top: -6px;
     left: -6px;
@@ -2127,6 +2203,9 @@ footer #rights {
     position: absolute;
     right: 50px;
     top: -90px;
+  }
+  footer #goTop #arrow {
+    width: 11px;
   }
   footer .title {
     top: -47px;
